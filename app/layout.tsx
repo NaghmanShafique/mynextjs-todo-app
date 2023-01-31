@@ -13,7 +13,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <h1>NextJs Todo App</h1>
+        <h1  style={{textAlign:'center', fontSize:'32px', fontWeight:700,backgroundColor:'black',color:'white'}}>Next Todo App</h1>
         {children}</body>
     </html>
   )

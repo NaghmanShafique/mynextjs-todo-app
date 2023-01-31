@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Input , Button, Box} from "@chakra-ui/react";
 
 export default function TodoItems() {
 
@@ -55,12 +56,12 @@ export default function TodoItems() {
   }
 
   return (<>
-    <div>
-      <input type="text" placeholder="Add Todo" value={todo} onChange={(e) => setTodo(e.target.value)} />
-      <button style={{ margin: "5px" }} onClick={createTodo}>Add</button>
-    </div>
-    <div>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
+    <Box>
+      <Input type="text" variant='outline' m='10px' placeholder="Enter Your Todo" size={'sm'} maxW={'1024px'} value={todo} onChange={(e) => setTodo(e.target.value)} />
+      <Button size='sm' colorScheme='blue' style={{ margin: "2px" }} onClick={createTodo}>Add Todo</Button>
+    </Box>
+    <Box maxW={'994px'} mx={'auto'}>
+      <ul style={{ listStyleType: "none", padding: '20px' }}>
 
         {
 
@@ -70,15 +71,15 @@ export default function TodoItems() {
 
             return (<>
               <input type="checkbox" checked={ele.isCompleted} onChange={() => { OnChangeHandler(ele) }} />
-              <li style={{ width: "250px", padding: "5px", display: "inline-block", color: ele.isCompleted ? "green" : "red" }} key={ele.todoText}>{ele.todoText}</li>
-              <button onClick={() => deleteTodo(ele)}>Delete</button><br />
+              <li style={{ width: "750px", padding: "5px",marginLeft:"5px", display: "inline-block",boxShadow:'0 3px 10px rgb(0 0 0 / 0.2)'}} key={ele.todoText}>{ele.todoText}</li>
+              <Button size='sm' colorScheme='blue' ml={'5px'} onClick={() => deleteTodo(ele)}>Delete</Button><br />
             </>)
 
           }
           )
         }
       </ul>
-    </div>
+    </Box>
   </>
   )
 }
