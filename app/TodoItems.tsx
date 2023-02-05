@@ -56,8 +56,8 @@ export default function TodoItems() {
   }
 
   return (<>
-    <Box>
-      <Input type="text" variant='outline' m='10px' placeholder="Enter Your Todo" size={'sm'} maxW={'1024px'} value={todo} onChange={(e) => setTodo(e.target.value)} />
+    <Box maxW={'994px'} mx={'auto'}>
+      <Input type="text" variant='outline' m='10px' placeholder="Enter Your Todo" size={'sm'} maxW={'872px'} value={todo} onChange={(e) => setTodo(e.target.value)} />
       <Button size='sm' colorScheme='blue' style={{ margin: "2px" }} onClick={createTodo}>Add Todo</Button>
     </Box>
     <Box maxW={'994px'} mx={'auto'}>
@@ -71,7 +71,7 @@ export default function TodoItems() {
 
             return (<>
               <input type="checkbox" checked={ele.isCompleted} onChange={() => { OnChangeHandler(ele) }} />
-              <li style={{ width: "750px", padding: "5px",marginLeft:"5px", display: "inline-block",boxShadow:'0 3px 10px rgb(0 0 0 / 0.2)'}} key={ele.todoText}>{ele.todoText}</li>
+              <li style={{ minWidth:"350px" ,maxWidth:"750px", padding: "5px",marginLeft:"5px", display: "inline-block",boxShadow:'0 3px 10px rgb(0 0 0 / 0.2)',borderRadius:'8px'}} key={ele.todoText}>{ele.todoText}</li>
               <Button size='sm' colorScheme='blue' ml={'5px'} onClick={() => deleteTodo(ele)}>Delete</Button><br />
             </>)
 
